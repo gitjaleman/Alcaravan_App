@@ -1,8 +1,8 @@
 /**
- * AdminLTE Demo Menu
- * ------------------
- * You should not use this file in production.
- * This file is for demo purposes only.
+*   Alcarava v1
+ *   Author: Javier Aleman Mora
+ *   Website: AdminLTE.io <https://alcaravan.com.co/>
+ *   License: <38bb20225a26c0b7146cb26f5b0acb67>
  */
 
 /* eslint-disable camelcase */
