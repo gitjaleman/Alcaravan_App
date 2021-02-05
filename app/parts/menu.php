@@ -6,7 +6,7 @@
 	</ul>
 	<form class="form-inline ml-3">
 		<div class="input-group input-group-sm">
-			<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+			<input class="form-control form-control-navbar" type="search" placeholder="Buscar . . . " aria-label="Search">
 			<div class="input-group-append">
 				<button class="btn btn-navbar" type="submit">
 					<i class="fa fa-search"></i>
@@ -21,8 +21,8 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-				<i class="fa fa-th-large"></i>
+			<a class="nav-link"  role="button">
+				Cerrar Sesión <i class="fa fa-sign-in"></i> 
 			</a>
 		</li>
 	</ul>
@@ -42,89 +42,90 @@
 			<ul class="nav nav-pills nav-sidebar flex-column  text-sm" data-widget="treeview" role="menu" data-accordion="false">
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-map-o"></i>
 						<p>
-							Gallery
+							Mapa
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-pencil-square-o"></i>
 						<p>
-							Gallery
+							Registro
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-handshake-o"></i>
 						<p>
-							Gallery
+							Ventas
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-file-text-o"></i>
 						<p>
-							Gallery
+							Facturación
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-money"></i>
 						<p>
-							Gallery
+							Pagos
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-calculator"></i>
 						<p>
-							Gallery
+							Gastos
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-commenting-o"></i>
 						<p>
-							Gallery
+							Notificación
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-comments-o"></i>
 						<p>
-							Gallery
+							Comunicación
+						</p>
+					</a>
+				</li>
+				
+				<li class="nav-item">
+					<a href="" class="nav-link">
+						<i class="nav-icon fa fa-line-chart"></i>
+						<p>
+							Reportes
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-database"></i>
 						<p>
-							Gallery
+							Base Datos
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
+						<i class="nav-icon fa fa-user-o"></i>
 						<p>
-							Gallery
-						</p>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="" class="nav-link">
-						<i class="nav-icon fa fa-image"></i>
-						<p>
-							Gallery
+							Usuarios
 						</p>
 					</a>
 				</li>
