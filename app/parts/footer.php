@@ -7,10 +7,11 @@
     </footer>
     <script src="../app/assets/js/jquery.min.js"></script>
   	<script src="../app/assets/js/jquery-ui.min.js"></script>
-  	<script src="../app/assets/js/moment.min.js"></script>
   	<script src="../app/assets/js/bootstrap.min.js"></script>
+	<script src="../app/assets/js/jquery.dataTables.min.js"></script>
+	<script src="../app/assets/js/dataTables.bootstrap.min.js"></script>
   	<script src="../app/assets/js/adminlte.min.js"></script>
- 	  <script src="../app/assets/js/demo.js"></script>
-  	<script src="../app/assets/js/dashboard.js"></script>
+ 	<script src="../app/assets/js/demo.js"></script>
+  	<script src="../app/assets/js/main.js"></script>
 	</body>
 </html>
