@@ -1,5 +1,5 @@
 function menu(dir){
-	window.location="public/"+dir;
+	window.location=dir;
 }
 function salir(){
 	localStorage.clear();

@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="../app/assets/css/adminlte.min.css">
   <!-- Data table -->
   <link rel="stylesheet" href="../app/assets/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="../app/assets/css/dataTables.bootstrap.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed   sidebar-collapse">
 <div class="wrapper">
