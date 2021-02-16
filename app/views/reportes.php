@@ -10,13 +10,13 @@
 
                         <div class="card-tools" style="max-width: 210px; display: inline-block;">
 							<div class="input-group mb-3 input-group-sm">
-								<input type="text" class="form-control form-sm">
+								<input type="date" class="form-control form-sm">
 							</div>
 						</div>
 
                         <div class="card-tools" style="max-width: 250px; display: inline-block;">
 							<div class="input-group mb-3 input-group-sm">
-								<input type="text" class="form-control form-sm">
+								<input type="date" class="form-control form-sm">
 								<div class="input-group-append">
 									<span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
 								</div>

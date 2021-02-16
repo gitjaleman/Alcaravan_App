@@ -1,7 +1,105 @@
+<header class="main-header">
+  <a href="index2.html" class="logo">
+    <span class="logo-mini"><b>A</b>LC</span>
+    <span class="logo-lg"><b>Admin</b>ALC</span>
+  </a>
+  <nav class="navbar navbar-static-top">
+    <a  class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li class="dropdown user user-menu">
+          <a><span>Salir</span> <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="../app/assets/img/man1.png" class="img-circle" alt="User Image" />
+      </div>
+      <div class="pull-left info">
+        <p>Alexander Pierce</p>
+        <a ><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <br><br>
+    <ul class="sidebar-menu" data-widget="tree">
+
+      <li class="" onclick="menu('mapa')">
+        <a><i class="fa fa-map-o"></i> <span>Mapa</span></a>
+      </li>
+      <li onclick="menu('registro')">
+        <a><i class="fa fa-pencil-square-o"></i> <span>Registron</span></a>
+      </li>
+
+      <li onclick="menu('ventas')">
+        <a><i class="fa fa-handshake-o"></i> <span>Ventas</span></a>
+      </li>
+      <li onclick="menu('facturacion')">
+        <a><i class="fa fa-file-text-o"></i> <span>Facturación</span></a>
+      </li>
+
+
+      <li onclick="menu('pagos')">
+        <a><i class="fa fa-money"></i> <span>Pagos</span></a>
+      </li>
+      <li onclick="menu('gastos')">
+        <a><i class="fa  fa-calculator"></i> <span>Gastos</span></a>
+      </li>
+
+
+      <li onclick="menu('notificacion')">
+        <a><i class="fa fa-commenting-o"></i> <span>Notificación</span></a>
+      </li>
+      <li onclick="menu('comunicacion')">
+        <a><i class="fa fa-comments-o"></i> <span>Comunicación</span></a>
+      </li>
+
+
+      <li onclick="menu('reportes')">
+        <a><i class="fa fa-line-chart"></i> <span>reportes</span></a>
+      </li>
+      <li onclick="menu('usuarios')">
+        <a><i class="fa fa-user-o"></i> <span>Usuarios</span></a>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+
+
+
+
+
+  <!--
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 	<ul class="navbar-nav">
 		<li class="nav-item">
-			<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
+			<a class="nav-link" data-widget="pushmenu"  role="button"><i class="fa fa-bars"></i></a>
 		</li>
 	</ul>
 	<form class="form-inline ml-3">
@@ -16,7 +114,7 @@
 	</form>
 	<ul class="navbar-nav ml-auto">
 		<li class="nav-item">
-			<a class="nav-link" data-widget="fullscreen" href="#" role="button">
+			<a class="nav-link" data-widget="fullscreen"  role="button">
 				<i class="fa fa-expand-arrows-alt"></i>
 			</a>
 		</li>
@@ -135,3 +233,5 @@
 	</div>
 </aside>
 <div class="content-wrapper">
+
+-->
