@@ -11,4 +11,5 @@
   Router::add("reportes",       "MainController",   "reportes");
   Router::add("basedatos",      "MainController",   "basedatos");
   Router::add("usuarios",       "MainController",   "usuarios");
+  Router::add("asociado",       "MainController",   "asociado");
 ?>
