@@ -1,12 +1,17 @@
 <?php
 class ApiController{
   public function index()                   {Restapi::render("index");}
+
   public function login()                   {Restapi::render("login");}
-  public function asociado()                {Restapi::render("asociado");}
+
   public function asociados()               {Restapi::render("asociados");}
-  public function insert_asociado()         {Restapi::render("insert_asociado");}
-  public function get_asociado()            {Restapi::render("get_asociado");}
-  public function update_asociado()         {Restapi::render("update_asociado");}
-  public function delete_asociado()         {Restapi::render("delete_asociado");}
+  public function asociado_insert()         {Restapi::render("asociado_insert");}
+  public function asociado_get()            {Restapi::render("asociado_get");}
+  public function asociado_update()         {Restapi::render("asociado_update");}
+  public function asociado_delete()         {Restapi::render("asociado_delete");}
+
+  public function lote_select()             {Restapi::render("lote_select");}
+  public function lotes_get()               {Restapi::render("lotes_get");}
+  public function lotes_filter()            {Restapi::render("lotes_filter");}
 }
 ?>

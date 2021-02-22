@@ -52,7 +52,7 @@ function registrar(){
     var frm = $("#frm").serialize();
     $.ajax({
       type: "GET",
-      url: http+"/rest/api/asociado_insert",
+      url: http+"/rest/api/insert_asociado",
       data: frm  
     }).done(function(i){
       $("#frm")[0].reset();
@@ -60,6 +60,4 @@ function registrar(){
     });
   });
 }
-
-
 

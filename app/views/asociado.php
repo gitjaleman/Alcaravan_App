@@ -13,14 +13,11 @@
           <a class="btn btn-primary btn-block"><b id="fcedula">- - - - - - - -</b></a>
           <br>
 
-
           <div class="mailbox-controls">
-            <button class="btn btn-default"><i class="fa fa-upload"></i> Subir</button>
-
+            <button class="btn btn-default" data-toggle="modal" data-target="#modal_file"><i class="fa fa-upload"></i> Subir</button>
             <div class="pull-right">
               <button class="btn btn-danger" data-toggle="modal" data-target="#modal_delete"><i class="fa fa-trash"></i> Borrar</button>
             </div>
-
           </div>
 
         </div>
@@ -93,13 +90,6 @@
             </div>
           </form>
 
-
-
-
-
-
-
-
         </div>
       </div>
 
@@ -108,8 +98,6 @@
   </div>
 
 </section>
-
-
 
 <div class="modal fade" id="modal_delete">
   <div class="modal-dialog">
@@ -136,17 +124,17 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span></button>
-        <h4 class="modal-title">Default Modal</h4>
+        <h4 class="modal-title">Subir Documento</h4>
       </div>
       <div class="modal-body">
-        <p>One fine body…</p>
+        <p>El documento debe ser formato <b>PDF</b></p>
+        <br>
+          <input type="file">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
       </div>
     </div>
-    <!-- /.modal-content -->
   </div>
-  <!-- /.modal-dialog -->
 </div>

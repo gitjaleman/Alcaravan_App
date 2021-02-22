@@ -31,7 +31,7 @@ function getId(_par) {
 function data(id) {
   $.ajax({
     type: "GET",
-    url: http + "/rest/api/get_asociado?id=" + id,
+    url: http + "/rest/api/asociado_get?id=" + id,
   }).done(function (i) {
     var d = i["data"];
     $("#cedula").val(d.cedula);
@@ -61,7 +61,7 @@ function actualizar() {
     var frm = $("#frm").serialize();
     $.ajax({
       type: "GET",
-      url: http + "/rest/api/update_asociado",
+      url: http + "/rest/api/asociado_update",
       data: frm,
     }).done(function (i) {
       $("#frm")[0].reset();
@@ -74,7 +74,7 @@ function borrar() {
   var miid = getId("id");
   $.ajax({
     type: "GET",
-    url: http + "/rest/api/delete_asociado?id=" + miid
+    url: http + "/rest/api/asociado_delete?id=" + miid
   }).done(function (i) {
     window.location = "registro";
   });

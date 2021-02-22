@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../app/assets/css/dataTables.bootstrap.min.css" />
     <link rel="stylesheet" href="../app/assets/css/AdminLTE.css" />
     <link rel="stylesheet" href="../app/assets/css/skin-black.css" />
+
+    <?php $Css=new Css; ?>
     
 </head>
   <body class="sidebar-mini  fixed layout-boxed  skin-black ">
