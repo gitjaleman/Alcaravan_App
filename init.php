@@ -22,37 +22,25 @@ if (isset($_SESSION["conectado"])) {
       <div class="login-logo">
         <img src="app/assets/img/logo.png">
       </div>
-      <!-- /.login-logo -->
       <div class="login-box-body">
 
-
-
         <form id="frm">
-         
-
           <div class="input-group">
-            <span class="input-group-addon" ><span class="fa fa-user"></span></span>
+            <span class="input-group-addon"><span class="fa fa-user"></span></span>
             <input type="text" class="form-control" name="u" placeholder="Nombre Usuario" required>
           </div>
           <br>
-
           <div class="input-group">
-            <span class="input-group-addon" ><span class="fa fa-lock"></span></span>
-             <input type="password" class="form-control" name="p" placeholder="Contraseña" required>
+            <span class="input-group-addon"><span class="fa fa-lock"></span></span>
+            <input type="password" class="form-control" name="p" placeholder="Contraseña" required>
           </div>
           <br>
-
-          
-            <button type="submit" class="btn btn-info btn-block" style="background-color: #104A64; border:#104A64 1px solid;">Ingresar</button>
-          
-          
+          <button type="submit" class="btn btn-info btn-block" style="background-color: #104A64; border:#104A64 1px solid;">Ingresar</button>
 
         </form>
 
-
-
       </div>
-      <!-- /.login-box-body -->
+
     </div>
 
 
