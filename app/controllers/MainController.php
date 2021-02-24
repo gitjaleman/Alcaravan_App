@@ -13,5 +13,6 @@ class MainController{
 	public function basedatos()         { Response::render("basedatos");   	}
   public function usuarios()          { Response::render("usuarios");   	}
   public function asociado()          { Response::render("asociado");   	}
+  public function lote()              { Response::render("lote");   	}
 }
 ?>

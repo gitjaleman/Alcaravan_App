@@ -1,63 +1,64 @@
-$(document).ready(function (){
- 
+$(document).ready(function () {
+  filtro();
+  search();
 });
-var http="http://localhost/server/Alcaravan_app";
-function frm() {
-  $(".box_data").slideUp(0);
-  $("#box_frm").slideDown(0);
-  registrar();
-}
 
-function tbl(){
-  $(".box_data").slideUp(0);
-  $("#box_tbl").slideDown(0);
-  listar();
-}
+var http = "http://localhost/server/Alcaravan_app";
 
-
-function listar(){
-  $('#tbl').dataTable(
-  {
-    "aProcessing": true,
-    "aServerSide": true,
-    dom: 'Bfrtip',
-    "ajax":{
-      url: http+"/rest/api/asociados",
-      type : "get",
-      dataType : "json",            
-      error: function(e){
-        console.log(e.responseText);  
-      }
-    },
-    "bDestroy": true,
-    "iDisplayLength": 10,
-    "columns":[
-      {"data":"cedula"},
-      {"data":"nombre"},
-      {"data":"telefono"},
-      {"data":"correo"},
-      {"data": "id",
-        "render": function(data, type, row) {
-        return '<a href="asociado?id='+data+'" class="btn btn-sm btn-default "><i class="fa fa-plus-square"></i></a>'
-        }
-      }
-    ]
-  }).DataTable();
-}
-
-
-function registrar(){
-  $('#frm').on('submit',function(e){ 
+function filtro() {
+  $("#frm_f").on("submit", function (e) {
     e.preventDefault();
-    var frm = $("#frm").serialize();
+    var frm = $("#frm_f").serialize();
     $.ajax({
       type: "GET",
-      url: http+"/rest/api/insert_asociado",
-      data: frm  
-    }).done(function(i){
-      $("#frm")[0].reset();
-      tbl();
+      url: http + "/rest/api/lotes_filter",
+      data: frm,
+    }).done(function (i) {
+
+     console.log(i)
+      var result =i.data;
+    $("#box_body").html('');
+    for (let  item of  result) {
+      $("#box_body").append(item.line+'<button onclick="see('+item.id+')" class="box_lote '+item.estado+'">'+item.detalle+'</button');
+    }
+    
+      
     });
   });
 }
 
+function search() {
+  $("#frm_s").on("submit", function (e) {
+    e.preventDefault();
+    var frm = $("#frm_s").serialize();
+    $.ajax({
+      type: "GET",
+      url: http + "/rest/api/lote_select",
+      data: frm,
+    }).done(function (i) {
+      var r =i.data;
+      $("#box_body").html('');
+     
+      $("#box_body").append('<button onclick="see('+r.id+')" class="box_lote '+r.estado+'">'+r.detalle+'</button');
+    
+      
+    });
+  });
+}
+
+function allData() {
+  $.ajax({
+    type: "GET",
+    url: http + "/rest/api/lotes_get"
+  }).done(function (i) {
+    var result =i.data;
+    $("#box_body").html('');
+    for (let  item of  result) {
+      $("#box_body").append(item.line+'<button onclick="see('+item.id+')" class="box_lote '+item.estado+'">'+item.detalle+'</button');
+    }
+  });
+}
+
+function see(id){
+  window.location="lote?id="+id;
+}

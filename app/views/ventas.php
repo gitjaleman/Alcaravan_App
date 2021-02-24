@@ -6,9 +6,9 @@
 
 			<div class="box-tools pull-right" data-toggle="tooltip">
 
-				<form style="max-width: 160px; margin-left:10px;display:inline-block;vertical-align: top;">
+				<form id="frm_f" style="max-width: 160px; margin-left:10px;display:inline-block;vertical-align: top;">
 					<div class="input-group input-group-sm ">
-						<select name="" id="" class="form-control">
+						<select name="m"  class="form-control" required>
 							<option> - - ELEGIR - - </option>
 							<option value="A"> MANZANA A </option>
 							<option value="B"> MANZANA B </option>
@@ -25,7 +25,7 @@
 						</select>
 
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-flat">
+							<button type="submit" class="btn btn-default btn-flat">
 								<i class="fa fa-search"></i>
 							</button>
 						</span>
@@ -34,11 +34,11 @@
 
 
 
-				<form style="max-width: 100px; margin-left:10px;display:inline-block;vertical-align: top;">
+				<form id="frm_s" style="max-width: 100px; margin-left:10px;display:inline-block;vertical-align: top;">
 					<div class="input-group input-group-sm ">
-						<input type="text" class="form-control">
+						<input type="text" class="form-control" name="l" required>
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-flat">
+							<button type="submit" class="btn btn-default btn-flat">
 								<i class="fa fa-search"></i>
 							</button>
 						</span>
@@ -47,27 +47,15 @@
 
 
 
-				<button type="button" class="btn btn-default btn-sm" onclick="nuevo()" style="margin-left:10px; display:inline-block;vertical-align: top;">
+				<button type="button" class="btn btn-default btn-sm" onclick="allData()" style="margin-left:10px; display:inline-block;vertical-align: top;">
 					<i class="fa fa-list"></i>
 					Todos
 				</button>
 
 			</div>
 		</div>
-		<div class="box-body">
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote libre">A01</button>
-			<button onclick="" class="box_lote vendido">B05</button>
+		<div id="box_body" class="box-body">
+
 		</div>
 
 	</div>

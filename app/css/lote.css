@@ -1,0 +1,16 @@
+#loader_box{
+    padding-top: 15%;
+}
+#lote_venta,#lote_info,#lote_time,#lote_factura{
+    display: none;
+}
+.btn_datos{
+    border: none;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 5px;
+    color: #0a3d62;
+}
+.btn_datos:hover{
+    color: #0a3d62;
+}
