@@ -1,7 +1,7 @@
 $(document).ready(function (){
  
 });
-var http="http://localhost/server/Alcaravan_app";
+var http="https://alcaravan.com.co";
 function frm() {
   $(".box_data").slideUp(0);
   $("#box_frm").slideDown(0);

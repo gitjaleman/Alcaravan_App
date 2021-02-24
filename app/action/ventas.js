@@ -3,7 +3,7 @@ $(document).ready(function () {
   search();
 });
 
-var http = "http://localhost/server/Alcaravan_app";
+var http = "https://alcaravan.com.co";
 
 function filtro() {
   $("#frm_f").on("submit", function (e) {

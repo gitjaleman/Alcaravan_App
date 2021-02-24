@@ -2,7 +2,7 @@ $(document).ready(function() {
     localStorage.clear();
     login(); 
   });
-  var http="http://localhost/server/Alcaravan_app";
+  var http="https://alcaravan.com.co";
   function login(){
     $('#frm').on('submit',function(e){ 
       e.preventDefault();

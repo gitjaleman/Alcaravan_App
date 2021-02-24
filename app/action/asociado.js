@@ -3,7 +3,7 @@ $(document).ready(function () {
   data(id);
   actualizar();
 });
-var http = "http://localhost/server/Alcaravan_app";
+var http = "https://alcaravan.com.co";
 
 function getId(_par) {
   var _p = null;
