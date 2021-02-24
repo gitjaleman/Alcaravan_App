@@ -13,7 +13,7 @@ if (isset($_SESSION["conectado"])) {
     <title>Ingreso</title>
     <link rel="stylesheet" href="app/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="app/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="app/assets/css/adminLTE.css">
+    <link rel="stylesheet" href="app/assets/css/AdminLTE.css">
   </head>
 
   <body class="hold-transition login-page">
