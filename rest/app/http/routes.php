@@ -17,4 +17,6 @@
   Router::add("lotes_get",            "ApiController",  "lotes_get");
   Router::add("lotes_filter",         "ApiController",  "lotes_filter");
 
+  Router::add("general_venta",        "ApiController",  "general_venta");
+
 ?>

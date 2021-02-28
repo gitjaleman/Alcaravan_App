@@ -15,6 +15,8 @@ class ApiController{
   public function lote_id()                 {Restapi::render("lote_id");}
   public function lotes_get()               {Restapi::render("lotes_get");}
   public function lotes_filter()            {Restapi::render("lotes_filter");}
+
+  public function generar_venta()           {Restapi::render("generar_venta");}
  
 }
 ?>

@@ -48,13 +48,13 @@
 					<div class="box-header with-border">
 						<h3 class="box-title">Generar Venta</h3>
 					</div>
-					<div class="box-body">
+					<form id="frm_venta" class="box-body">
 						<br>
 						<h5>Datos Comprador</h5>
 						<br>
 						<div class="row">
 							<div class="col-xs-3">
-								<input type="number" id="v_i_cedula" class="form-control">
+								<input type="number" id="v_i_cedula" class="form-control" required>
 								<span class="help-block"># Cédula</span>
 							</div>
 							<div class="col-xs-6">
@@ -62,7 +62,7 @@
 								<span class="help-block">Nombre Comprador</span>
 							</div>
 							<div class="col-xs-3">
-								<button type="button" onclick="b_asociado()" class="btn btn-block btn-default">Buscar</button>
+								<div onclick="b_asociado()" class="btn btn-block btn-default">Buscar</div>
 							</div>
 						</div>
 
@@ -71,30 +71,29 @@
 						<br>
 						<div class="row">
 							<div class="col-xs-3">
-								<input type="number" id="v_b_precio" class="form-control">
+								<input type="number" id="v_b_precio" class="form-control" required>
 								<span class="help-block">Precio Lote</span>
 							</div>
 							<div class="col-xs-3">
-								<input type="number" id="v_b_inicial" class="form-control">
+								<input type="number" id="v_b_inicial" class="form-control" required>
 								<span class="help-block">Cuota Inicial</span>
 							</div>
 							<div class="col-xs-2">
-								<input type="number" id="v_b_cuotas" class="form-control">
+								<input type="number" id="v_b_cuotas" min="1" max="34" class="form-control" required>
 								<span class="help-block">Cuotas Restantes</span>
 							</div>
 							<div class="col-xs-3">
-								<input type="date" id="v_b_fecha" class="form-control">
+								<input type="date" id="v_b_fecha" class="form-control" required>
 								<span class="help-block">Fecaha Inicio </span>
 							</div>
 							<div class="col-xs-1">
-								<button type="button" class="btn btn-block btn-default" onclick="calcular_venta()">
+								<button type="submit" class="btn btn-block btn-default ">
 									<i class="fa fa-calculator" aria-hidden="true"></i>
 								</button>
 							</div>
 						</div>
 						<br>
-
-					</div>
+					</form>
 				</div>
 
 
@@ -280,7 +279,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
-				<button type="button" class="btn btn-default pull-right">Aceptar y Continuar</button>
+				<button type="button" class="btn btn-default pull-right" onclick="generar_venta()">Aceptar y Continuar</button>
 			</div>
 		</div>
 	</div>

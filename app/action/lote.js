@@ -1,5 +1,6 @@
 $(document).ready(function () {
   getLote();
+  calcular_venta();
 });
 var http = "https://alcaravan.com.co";
 
@@ -72,14 +73,8 @@ function b_asociado() {
 }
 
 function calcular_venta() {
-  var T_vprecio = $("#v_b_precio").val().length;
-  var T_cinicial = $("#v_b_inicial").val().length;
-  var T_ncuotas = $("#v_b_cuotas").val().length;
-  var T_fInicial = $("#v_b_fecha").val().length;
-  var T_cedula = $("#v_i_cedula").val().length;
-  if (T_cedula == 0 ||T_vprecio == 0 || T_cinicial == 0 || T_ncuotas == 0 || T_fInicial == 0) {
-    alert('Completa todos los campos');
-  } else {
+  $("#frm_venta").on("submit", function (e) {
+    e.preventDefault();
     var vprecio = $("#v_b_precio").val();
     var cinicial = $("#v_b_inicial").val();
     var ncuotas = $("#v_b_cuotas").val();
@@ -113,7 +108,7 @@ function calcular_venta() {
       );
       miSaldo = miSaldo - cMensual;
     }
-  }
+  });
 }
 
 function fFecha_f(pfecha) {
@@ -147,4 +142,34 @@ function fNumero(amount, decimals) {
   while (regexp.test(amount_parts[0]))
     amount_parts[0] = amount_parts[0].replace(regexp, "$1" + "." + "$2");
   return amount_parts.join(",");
+}
+
+function generar_venta() {
+  var precio = $("#v_b_precio").val();
+  var inicial = $("#v_b_inicial").val();
+  var cuotas = $("#v_b_cuotas").val();
+  var fecha = $("#v_b_fecha").val();
+  var cedula = $("#v_i_cedulaa").val();
+  var id = getId("id");
+  $.ajax({
+    type: "GET",
+    url:
+      http +
+      "/rest/api/generar_venta?precio=" +
+      precio +
+      "&inicial=" +
+      inicial +
+      "&cuotas=" +
+      cuotas +
+      "&fecha=" +
+      fecha +
+      "&cedula=" +
+      cedula +
+      "&id=" +
+      id
+  }).done(function (i) {
+
+    console.log(i);
+
+  });
 }
