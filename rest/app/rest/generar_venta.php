@@ -17,7 +17,7 @@
   }
   function lotes($pventa,$comprador,$cinicial,$ncuotas,$saldo,$vmensual,$finicial){
     $obj=new conn;
-    $sql="UPDATE `lotes` SET `estado` = 'VENDIDO', 
+   echo  $sql="UPDATE `lotes` SET `estado` = 'VENDIDO', 
     `pventa` = '$pventa', 
     `comprador` = '$comprador', 
     `cinicial` = '$cinicial', 
