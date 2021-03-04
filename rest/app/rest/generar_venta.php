@@ -11,13 +11,15 @@
     $cinicial   = $_GET['inicial'];
     $ncuotas = $_GET['cuotas'];
     $finicial = $_GET['fecha'];
+    $lote = $_GET['lote'];
+    $user = $_GET['user'];
     $saldo = $pventa- $cinicial;
     $vmensual = $saldo/$ncuotas;
-    $return = lotes($pventa,$comprador,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id);
+    lotes($pventa,$comprador,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id,$lote,$user);
   }
-  function lotes($pventa,$comprador,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id){
+  function lotes($pventa,$comprador,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id,$lote,$user){
     $obj=new conn;
-   echo  $sql="UPDATE `lotes` SET `estado` = 'VENDIDO', 
+    $sql1="UPDATE `lotes` SET `estado` = 'vendido', 
     `pventa` = '$pventa', 
     `comprador` = '$comprador', 
     `cinicial` = '$cinicial', 
@@ -25,18 +27,18 @@
     `saldo` = '$saldo', 
     `vmensual` = '$vmensual', 
     `finicial` = '$finicial', 
+    `saldof` = '$saldo', 
     `operaciones` = '1' 
     WHERE `lotes`.`id` = '$id' ";
-    $con=$obj->query($sql);
-    $num=mysqli_num_rows($con);
-    if($num>=1){
-      while ($d=mysqli_fetch_assoc($con) ) {
-        $data["data"][]=array_map(null, $d);
-      } 
-    }else{
-      $data["data"]=null;
-    }
-    return $data;
+    date_default_timezone_set('America/Bogota');
+    $codigo = date("ymdgis");
+
+    $sql2="INSERT INTO `operaciones` (`id`, `lote`, `codigo`, `titulo`, `detalle`, `fecha`, `hora`, `usuario`) VALUES 
+    (NULL, '$lote', '$codigo', 'VENTA', 'Se genero proceso de  venta.', '$finicial', '00:00', '$user');";
+
+    $obj->query($sql1);
+    $obj->query($sql2);
+
+    
   }
-  echo json_encode($return);
 ?>

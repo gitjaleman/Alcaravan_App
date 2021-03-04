@@ -1,6 +1,7 @@
 $(document).ready(function () {
   getLote();
   calcular_venta();
+  
 });
 var http = "https://alcaravan.com.co";
 
@@ -36,6 +37,7 @@ function getLote() {
     var data = i.data;
     $("#v_manzana").html(data.manzana);
     $("#v_lote").html(data.lote);
+    $("#l_detalle").val(data.detalle);
     $("#v_detalle").html(data.detalle);
     $("#v_operaciones").html(data.operaciones);
     $("#v_facturacion").html("$ " + data.saldo);
@@ -145,11 +147,13 @@ function fNumero(amount, decimals) {
 }
 
 function generar_venta() {
+  var user = localStorage.getItem('user_user');
   var precio = $("#v_b_precio").val();
   var inicial = $("#v_b_inicial").val();
   var cuotas = $("#v_b_cuotas").val();
   var fecha = $("#v_b_fecha").val();
-  var cedula = $("#v_i_cedulaa").val();
+  var cedula = $("#v_i_cedula").val();
+  var lote = $("#l_detalle").val();
   var id = getId("id");
   $.ajax({
     type: "GET",
@@ -163,6 +167,10 @@ function generar_venta() {
       cuotas +
       "&fecha=" +
       fecha +
+      "&user=" +
+      user +
+      "&lote=" +
+      lote +
       "&cedula=" +
       cedula +
       "&id=" +

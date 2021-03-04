@@ -103,7 +103,7 @@
 					</div>
 					<div class="box-body">
 
-
+			
 
 					</div>
 					<div class="box-footer">
@@ -178,6 +178,7 @@
 			<div class="modal-body">
 
 				<section class="invoice">
+					<input type="hidden" id="l_detalle">
 
 
 
