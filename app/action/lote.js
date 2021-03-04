@@ -1,7 +1,6 @@
 $(document).ready(function () {
   getLote();
   calcular_venta();
-  
 });
 var http = "https://alcaravan.com.co";
 
@@ -147,7 +146,7 @@ function fNumero(amount, decimals) {
 }
 
 function generar_venta() {
-  var user = localStorage.getItem('user_user');
+  var user = localStorage.getItem("user_user");
   var precio = $("#v_b_precio").val();
   var inicial = $("#v_b_inicial").val();
   var cuotas = $("#v_b_cuotas").val();
@@ -176,8 +175,7 @@ function generar_venta() {
       "&id=" +
       id
   }).done(function (i) {
-
     console.log(i);
-
+    window.location.reload();
   });
 }
