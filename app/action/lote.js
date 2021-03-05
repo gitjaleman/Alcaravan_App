@@ -159,31 +159,32 @@ function generar_venta() {
   var nombre = $("#venta_nombre").val();
   var lote = $("#venta_detalle").val();
   var id = $("#venta_id").val();
+  var url = http +
+  "/rest/api/generar_venta?precio=" +
+  precio +
+  "&inicial=" +
+  inicial +
+  "&cuotas=" +
+  cuotas +
+  "&fecha=" +
+  fecha +
+  "&user=" +
+  user +
+  "&lote=" +
+  lote +
+  "&cedula=" +
+  cedula +
+  "&nombre=" +
+  nombre +
+  "&id=" +
+  id;
+  console.log(url);
   $.ajax({
     type: "GET",
-    url:
-      http +
-      "/rest/api/generar_venta?precio=" +
-      precio +
-      "&inicial=" +
-      inicial +
-      "&cuotas=" +
-      cuotas +
-      "&fecha=" +
-      fecha +
-      "&user=" +
-      user +
-      "&lote=" +
-      lote +
-      "&cedula=" +
-      cedula +
-      "&nombre=" +
-      nombre +
-      "&id=" +
-      id
+    url: url
   }).done(function (i) {
-    console.log(i);
-    //window.location.reload();
+
+    window.location.reload();
   });
 }
 
