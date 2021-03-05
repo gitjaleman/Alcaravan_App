@@ -34,15 +34,18 @@ function getLote() {
     url: http + "/rest/api/lote_id?id=" + id,
   }).done(function (i) {
     var data = i.data;
-    $("#v_manzana").html(data.manzana);
-    $("#v_lote").html(data.lote);
-    $("#l_detalle").val(data.detalle);
-    $("#v_detalle").html(data.detalle);
-    $("#v_operaciones").html(data.operaciones);
-    $("#v_facturacion").html("$ " + data.saldo);
-    $("#m_i_c_id").html("0" + data.id);
-    var fechaHoy = new Date();
-    $("#m_i_c_fecha").html(fechaHoy);
+    $("#as1_manzana").html(data.manzana);
+    $("#as1_lote").html(data.lote);
+    $("#as1_detalle").html(data.detalle);
+    $("#as2_operaciones").html(data.operaciones);
+    $("#as3_facturacion").html("$ "+fNumero(data.saldof,0));
+    
+    $("#venta_id").val(data.id);
+    $("#venta_detalle").val(data.detalle);
+    
+    $("#facturaventa_id").html("0" + data.id);
+    
+
     var estado = data.estado;
     if (estado == "libre") {
       $("#loader_box").slideUp(0);
@@ -55,7 +58,7 @@ function getLote() {
 }
 
 function b_asociado() {
-  var c = $("#v_i_cedula").val();
+  var c = $("#venta_cedula").val();
   $.ajax({
     type: "GET",
     url: http + "/rest/api/asociado_cedula?c=" + c,
@@ -63,12 +66,14 @@ function b_asociado() {
     var d = i.data;
     if (d == null) {
       alert("NO HAY RESULTADOS");
+      $("#valor_nombre").val('VALOR NO VALIDO');
     } else {
-      $("#v_i_nombre").val(d.nombre);
-      $("#m_i_c_cedula").html(d.cedula);
-      $("#m_i_c_nombre").html(d.nombre);
-      $("#m_i_c_telefono").html(d.telefono);
-      $("#m_i_c_direccion").html(d.direccion);
+      $("#venta_nombre").val(d.nombre);
+      $("#valor_nombre").val(d.nombre);
+      $("#facturaventa_cedula").html(d.cedula);
+      $("#facturaventa_nombre").html(d.nombre);
+      $("#facturaventa_telefono").html(d.telefono);
+      $("#facturaventa_direccion").html(d.direccion);
     }
   });
 }
@@ -76,26 +81,25 @@ function b_asociado() {
 function calcular_venta() {
   $("#frm_venta").on("submit", function (e) {
     e.preventDefault();
-    var vprecio = $("#v_b_precio").val();
-    var cinicial = $("#v_b_inicial").val();
-    var ncuotas = $("#v_b_cuotas").val();
-    var fInicial = $("#v_b_fecha").val();
+    var vprecio = $("#venta_precio").val();
+    var cinicial = $("#venta_inicial").val();
+    var ncuotas = $("#venta_cuotas").val();
+    var fInicial = $("#venta_fecha").val();
+    $("#facturaventa_fecha").html(fInicial);
     var saldo = vprecio - cinicial;
     $("#m_calcular_venta").modal("show");
-    $("#m_i_c_valor").html("$ " + fNumero(vprecio, 0));
-    $("#m_i_c_inicial").html("$ " + fNumero(cinicial, 0));
-    $("#m_i_c_cuotas").html(ncuotas);
-    $("#m_i_c_saldo").html("$ " + fNumero(saldo, 0));
-    $("#m_i_c_fecha").html(fInicial);
+    $("#facturaventa_valor").html("$ " + fNumero(vprecio, 0));
+    $("#facturaventa_inicial").html("$ " + fNumero(cinicial, 0));
+    $("#facturaventa_cuotas").html(ncuotas);
+    $("#facturaventa_saldo").html("$ " + fNumero(saldo, 0));
+    $("#facturaventa_fecha").html(fInicial);
     var cMensual = saldo / ncuotas;
     $("#tbl_calcular").html("");
     var miSaldo = saldo;
-
     for (var i = 1; i <= ncuotas; i++) {
       var laFecha = fFecha_p(fInicial);
       var sumafecha = sMes(laFecha, i);
       var finalFecha = fFecha_f(sumafecha);
-
       $("#tbl_calcular").append(
         "<tr><td>" +
           i +
@@ -147,13 +151,14 @@ function fNumero(amount, decimals) {
 
 function generar_venta() {
   var user = localStorage.getItem("user_user");
-  var precio = $("#v_b_precio").val();
-  var inicial = $("#v_b_inicial").val();
-  var cuotas = $("#v_b_cuotas").val();
-  var fecha = $("#v_b_fecha").val();
-  var cedula = $("#v_i_cedula").val();
-  var lote = $("#l_detalle").val();
-  var id = getId("id");
+  var precio = $("#venta_precio").val();
+  var inicial = $("#venta_inicial").val();
+  var cuotas = $("#venta_cuotas").val();
+  var fecha = $("#venta_fecha").val();
+  var cedula = $("#venta_cedula").val();
+  var nombre = $("#venta_nombre").val();
+  var lote = $("#venta_detalle").val();
+  var id = $("#venta_id").val();
   $.ajax({
     type: "GET",
     url:
@@ -172,10 +177,13 @@ function generar_venta() {
       lote +
       "&cedula=" +
       cedula +
+      "&nombre=" +
+      nombre +
       "&id=" +
       id
   }).done(function (i) {
     console.log(i);
-    window.location.reload();
+    //window.location.reload();
   });
 }
+

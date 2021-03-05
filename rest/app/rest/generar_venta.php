@@ -7,7 +7,8 @@
   if ($_SERVER['REQUEST_METHOD']=='GET') {
     $id = $_GET['id'];
     $pventa = $_GET['precio'];
-    $comprador = $_GET['cedula'];
+    $cedula = $_GET['cedula'];
+    $nombre = $_GET['nombre'];
     $cinicial   = $_GET['inicial'];
     $ncuotas = $_GET['cuotas'];
     $finicial = $_GET['fecha'];
@@ -15,13 +16,14 @@
     $user = $_GET['user'];
     $saldo = $pventa- $cinicial;
     $vmensual = $saldo/$ncuotas;
-    lotes($pventa,$comprador,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id,$lote,$user);
+    lotes($pventa,$cedula,$nombre,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id,$lote,$user);
   }
-  function lotes($pventa,$comprador,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id,$lote,$user){
+  function lotes($pventa,$cedula,$nombre,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id,$lote,$user){
     $obj=new conn;
-    $sql1="UPDATE `lotes` SET `estado` = 'vendido', 
+    echo $sql1="UPDATE `lotes` SET `estado` = 'vendido', 
     `pventa` = '$pventa', 
-    `comprador` = '$comprador', 
+    `cedula` = '$cedula', 
+    `nombre` = '$nombre', 
     `cinicial` = '$cinicial', 
     `ncuotas` = '$ncuotas', 
     `saldo` = '$saldo', 
@@ -33,7 +35,12 @@
     date_default_timezone_set('America/Bogota');
     $codigo = date("ymdgis");
 
-    $sql2="INSERT INTO `operaciones` (`id`, `lote`, `codigo`, `titulo`, `detalle`, `fecha`, `hora`, `usuario`) VALUES 
+
+    echo"<br>";
+    echo"<br>";
+    echo"<br>";
+    
+   echo  $sql2="INSERT INTO `operaciones` (`id`, `lote`, `codigo`, `titulo`, `detalle`, `fecha`, `hora`, `usuario`) VALUES 
     (NULL, '$lote', '$codigo', 'VENTA', 'Se genero proceso de  venta.', '$finicial', '00:00', '$user');";
 
     $obj->query($sql1);
