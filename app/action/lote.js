@@ -38,19 +38,23 @@ function getLote() {
     $("#as1_lote").html(data.lote);
     $("#as1_detalle").html(data.detalle);
     $("#as2_operaciones").html(data.operaciones);
-    $("#as3_facturacion").html("$ "+fNumero(data.saldof,0));
-    
+    $("#as3_facturacion").html("$ " + fNumero(data.saldof, 0));
     $("#venta_id").val(data.id);
     $("#venta_detalle").val(data.detalle);
-    
     $("#facturaventa_id").html("0" + data.id);
-    
-
     var estado = data.estado;
     if (estado == "libre") {
       $("#loader_box").slideUp(0);
       $("#lote_venta").slideDown(0);
     } else {
+      $("#info_cedula").val(data.cedula);
+      $("#info_nombre").val(data.nombre);
+      $("#info_fecha").val(data.finicial);
+      $("#info_precio").val("$ " + fNumero(data.pventa, 0));
+      $("#info_inicial").val("$ " + fNumero(data.cinicial, 0));
+      $("#info_cuotas").val(data.ncuotas);
+      $("#info_mensual").val("$ " + fNumero(data.vmensual, 0));
+      $("#info_saldo").val("$ " + fNumero(data.saldo, 0));
       $("#loader_box").slideUp(0);
       $("#lote_info").slideDown(0);
     }
@@ -66,7 +70,7 @@ function b_asociado() {
     var d = i.data;
     if (d == null) {
       alert("NO HAY RESULTADOS");
-      $("#valor_nombre").val('VALOR NO VALIDO');
+      $("#valor_nombre").val("VALOR NO VALIDO");
     } else {
       $("#venta_nombre").val(d.nombre);
       $("#valor_nombre").val(d.nombre);
@@ -159,32 +163,32 @@ function generar_venta() {
   var nombre = $("#venta_nombre").val();
   var lote = $("#venta_detalle").val();
   var id = $("#venta_id").val();
-  var url = http +
-  "/rest/api/generar_venta?precio=" +
-  precio +
-  "&inicial=" +
-  inicial +
-  "&cuotas=" +
-  cuotas +
-  "&fecha=" +
-  fecha +
-  "&user=" +
-  user +
-  "&lote=" +
-  lote +
-  "&cedula=" +
-  cedula +
-  "&nombre=" +
-  nombre +
-  "&id=" +
-  id;
-  console.log(url);
+  var url =
+    http +
+    "/rest/api/generar_venta?precio=" +
+    precio +
+    "&inicial=" +
+    inicial +
+    "&cuotas=" +
+    cuotas +
+    "&fecha=" +
+    fecha +
+    "&user=" +
+    user +
+    "&lote=" +
+    lote +
+    "&cedula=" +
+    cedula +
+    "&nombre=" +
+    nombre +
+    "&id=" +
+    id;
   $.ajax({
     type: "GET",
     url: url
   }).done(function (i) {
-
     window.location.reload();
   });
 }
+
 

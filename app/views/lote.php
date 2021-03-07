@@ -101,13 +101,13 @@
 							<div class="col-xs-4">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">CÉDULA</span>
-									<input type="text" class="form-control" disabled>
+									<input type="text" id="info_cedula" class="form-control"  disabled>
 								</div>
 							</div>
 							<div class="col-xs-8">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">NOMBRE</span>
-									<input type="text" class="form-control" disabled>
+									<input type="text" id="info_nombre" class="form-control" disabled>
 								</div>
 							</div>
 						</div>
@@ -117,19 +117,19 @@
 							<div class="col-xs-4">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">FECHA</span>
-									<input type="text" class="form-control" disabled>
+									<input type="text" id="info_fecha" class="form-control" disabled>
 								</div>
 							</div>
 							<div class="col-xs-4">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">PRECIO</span>
-									<input type="text" class="form-control" disabled>
+									<input type="text" id="info_precio" class="form-control" disabled>
 								</div>
 							</div>
 							<div class="col-xs-4">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">C INICIAL</span>
-									<input type="text" class="form-control" disabled>
+									<input type="text" id="info_inicial" class="form-control" disabled>
 								</div>
 							</div>
 						</div>
@@ -138,19 +138,19 @@
 							<div class="col-xs-4">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">N CUOTAS</span>
-									<input type="text" class="form-control" disabled>
+									<input type="text" id="info_cuotas" class="form-control" disabled>
 								</div>
 							</div>
 							<div class="col-xs-4">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">V MENSUAL</span>
-									<input type="text" class="form-control" disabled>
+									<input type="text" id="info_mensual" class="form-control" disabled>
 								</div>
 							</div>
 							<div class="col-xs-4">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">SALDO</span>
-									<input type="text" class="form-control" disabled>
+									<input type="text" id="info_saldo" class="form-control" disabled>
 								</div>
 							</div>
 						</div>

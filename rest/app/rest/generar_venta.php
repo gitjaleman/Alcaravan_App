@@ -20,6 +20,9 @@
   }
   function lotes($pventa,$cedula,$nombre,$cinicial,$ncuotas,$saldo,$vmensual,$finicial,$id,$lote,$user){
     $obj=new conn;
+    date_default_timezone_set('America/Bogota');
+    $codigo = date("ymdgis");
+
     $sql1="UPDATE `lotes` SET `estado` = 'vendido', 
     `pventa` = '$pventa', 
     `cedula` = '$cedula', 
@@ -30,6 +33,7 @@
     `vmensual` = '$vmensual', 
     `finicial` = '$finicial', 
     `saldof` = '$saldo', 
+    `code` = '$codigo', 
     `operaciones` = '1' 
     WHERE `lotes`.`id` = '$id' ";
     date_default_timezone_set('America/Bogota');
