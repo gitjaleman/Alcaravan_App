@@ -55,6 +55,7 @@ function getLote() {
       $("#info_cuotas").val(data.ncuotas);
       $("#info_mensual").val("$ " + fNumero(data.vmensual, 0));
       $("#info_saldo").val("$ " + fNumero(data.saldo, 0));
+      $("#info_code").val(data.code);
       $("#loader_box").slideUp(0);
       $("#lote_info").slideDown(0);
     }
@@ -185,10 +186,19 @@ function generar_venta() {
     id;
   $.ajax({
     type: "GET",
-    url: url
+    url: url,
   }).done(function (i) {
     window.location.reload();
   });
 }
 
-
+function anular_venta() {
+  var id = $("#venta_id").val();
+  var code = $("#info_code").val();
+  $.ajax({
+    type: "GET",
+    url: http +"/rest/api/cancelar_venta?id="+id+"&code="+code
+  }).done(function (i) {
+    window.location.reload();
+  });
+}

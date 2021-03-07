@@ -52,9 +52,9 @@
 							</div>
 							<div class="col-xs-6">
 								<input type="text" id="valor_nombre" class="form-control" disabled>
-								<input type="hidden" id="venta_nombre" >
-								<input type="hidden" id="venta_id" >
-								<input type="hidden" id="venta_detalle" >
+								<input type="hidden" id="venta_nombre">
+								<input type="hidden" id="venta_id">
+								<input type="hidden" id="venta_detalle">
 								<span class="help-block">Nombre Comprador</span>
 							</div>
 							<div class="col-xs-3">
@@ -101,7 +101,7 @@
 							<div class="col-xs-4">
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">CÉDULA</span>
-									<input type="text" id="info_cedula" class="form-control"  disabled>
+									<input type="text" id="info_cedula" class="form-control" disabled>
 								</div>
 							</div>
 							<div class="col-xs-8">
@@ -151,12 +151,13 @@
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">SALDO</span>
 									<input type="text" id="info_saldo" class="form-control" disabled>
+									<input type="hidden" id="info_code">
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="box-footer">
-						<button type="submit" class="btn btn-danger">Eliminar Datos</button>
+						<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#m_anular_venta">Anular Venta</button>
 						<button type="submit" class="btn btn-info pull-right">Cambiar Propietario</button>
 					</div>
 				</div>
@@ -298,6 +299,36 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
 				<button type="button" class="btn btn-default pull-right" onclick="generar_venta()">Aceptar y Continuar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="m_anular_venta">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span></button>
+				<h4 class="modal-title"> <i class="fa fa-exclamation-triangle"></i> Anular Venta </h4>
+			</div>
+			<div class="modal-body">
+				<p>
+					Estas a punto de cancelar la venta.
+					<br>
+					<br>
+					Todas las operaciones y documentos se perderán si continuas con este proceso.
+					<br>
+					<b>
+						<h4> ¿Está seguro de continuar? </h4>
+					</b>
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-danger" onclick="anular_venta()">Si, Anular Venta</button>
 			</div>
 		</div>
 	</div>

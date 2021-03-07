@@ -17,6 +17,7 @@ class ApiController{
   public function lotes_filter()            {Restapi::render("lotes_filter");}
 
   public function generar_venta()           {Restapi::render("generar_venta");}
+  public function anular_venta()            {Restapi::render("anular_venta");}
  
 }
 ?>
