@@ -205,7 +205,8 @@ function generar_venta() {
     type: "GET",
     url: url,
   }).done(function (i) {
-    window.location.reload();
+    console.log(url);
+    //window.location.reload();
   });
 }
 

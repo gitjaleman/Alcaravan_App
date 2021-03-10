@@ -23,7 +23,7 @@
     date_default_timezone_set('America/Bogota');
     $codigo = date("ymdgis");
 
-    $sql1="UPDATE `lotes` SET `estado` = 'vendido', 
+    echo $sql1="UPDATE `lotes` SET `estado` = 'vendido', 
     `pventa` = '$pventa', 
     `cedula` = '$cedula', 
     `nombre` = '$nombre', 
@@ -37,8 +37,9 @@
     WHERE `lotes`.`id` = '$id' ";
     date_default_timezone_set('America/Bogota');
     $codigo = date("ymdgis");
+    echo "<br>";
 
-   $sql2="INSERT INTO `operaciones` (`id`, `lote`, `codigo`, `titulo`, `detalle`, `fecha`, `hora`, `usuario`) VALUES 
+   echo $sql2="INSERT INTO `operaciones` (`id`, `lote`, `codigo`, `titulo`, `detalle`, `fecha`, `hora`, `usuario`) VALUES 
     (NULL, '$lote', '$codigo', 'VENTA', 'Se genero proceso de  venta.', '$finicial', '00:00', '$user');";
 
     $obj->query($sql1);
