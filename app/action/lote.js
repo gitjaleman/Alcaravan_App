@@ -55,7 +55,7 @@ function getLote() {
       $("#info_cuotas").val(data.ncuotas);
       $("#info_mensual").val("$ " + fNumero(data.vmensual, 0));
       $("#info_saldo").val("$ " + fNumero(data.saldo, 0));
-      $("#info_code").val(data.code);
+      $("#info_detalle").val(data.detalle);
       $("#loader_box").slideUp(0);
       $("#lote_info").slideDown(0);
     }
@@ -79,6 +79,23 @@ function b_asociado() {
       $("#facturaventa_nombre").html(d.nombre);
       $("#facturaventa_telefono").html(d.telefono);
       $("#facturaventa_direccion").html(d.direccion);
+    }
+  });
+}
+
+function buscar_asociado() {
+  var c = $("#cambio_cedula_venta").val();
+  $.ajax({
+    type: "GET",
+    url: http + "/rest/api/asociado_cedula?c=" + c,
+  }).done(function (i) {
+    var d = i.data;
+    if (d == null) {
+      alert("NO HAY RESULTADOS");
+      $("#cambio_nombre_venta").val("VALOR NO VALIDO");
+    } else {
+      $("#cambio_nombre_venta").val(d.nombre);
+      $("#v_cambio_nombre_venta").val(d.nombre);
     }
   });
 }
@@ -194,10 +211,10 @@ function generar_venta() {
 
 function anular_venta() {
   var id = $("#venta_id").val();
-  var code = $("#info_code").val();
+  var lote = $("#info_detalle").val();
   $.ajax({
     type: "GET",
-    url: http +"/rest/api/cancelar_venta?id="+id+"&code="+code
+    url: http +"/rest/api/anular_venta?id="+id+"&lote="+code
   }).done(function (i) {
     window.location.reload();
   });

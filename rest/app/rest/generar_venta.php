@@ -33,7 +33,6 @@
     `vmensual` = '$vmensual', 
     `finicial` = '$finicial', 
     `saldof` = '$saldo', 
-    `code` = '$codigo', 
     `operaciones` = '1' 
     WHERE `lotes`.`id` = '$id' ";
     date_default_timezone_set('America/Bogota');

@@ -151,14 +151,14 @@
 								<div class="input-group">
 									<span class="input-group-addon" style="min-width: 120PX;">SALDO</span>
 									<input type="text" id="info_saldo" class="form-control" disabled>
-									<input type="hidden" id="info_code">
+									<input type="hidden" id="info_detalle">
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="box-footer">
 						<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#m_anular_venta">Anular Venta</button>
-						<button type="submit" class="btn btn-info pull-right">Cambiar Propietario</button>
+						<button type="submit" class="btn btn-info pull-right" data-toggle="modal" data-target="#m_cambiar_propietario">Cambiar Propietario</button>
 					</div>
 				</div>
 
@@ -329,6 +329,38 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
 				<button type="button" class="btn btn-danger" onclick="anular_venta()">Si, Anular Venta</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="m_cambiar_propietario">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span></button>
+				<h4 class="modal-title"> Cambiar Propietario </h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-4">
+						<input type="number" id="cambio_cedula_venta" class="form-control" required>
+						<span class="help-block"># Cédula</span>
+					</div>
+					<div class="col-xs-6">
+						<input type="text" id="cambio_nombre_venta" class="form-control" disabled>
+						<input type="hidden" id="v_cambio_nombre_venta">
+						<span class="help-block">Nombre Comprador</span>
+					</div>
+					<div class="col-xs-2">
+						<div onclick="buscar_asociado()" class="btn btn-block btn-default">Buscar</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-primary" onclick="cambiar_asociado()">Cambiar Propietario</button>
 			</div>
 		</div>
 	</div>

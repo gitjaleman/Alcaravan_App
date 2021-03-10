@@ -6,13 +6,11 @@
   http_response_code(200);
   if ($_SERVER['REQUEST_METHOD']=='GET') {
     $id = $_GET['id'];
-    $code = $_GET['code'];
-    anular($id,$code);
+    $lote = $_GET['lote'];
+    anular($id,$lote);
   }
-  function anular($id,$code){
+  function anular($id,$lote){
     $obj=new conn;
-
-
     $sql1="UPDATE `lotes` SET 
     `estado` = 'libre', 
     `pventa` = '0',
@@ -27,14 +25,9 @@
      `saldof` = '0', 
      `code` = '0'
       WHERE `lotes`.`id` = '$id'";
-   
-
-   $sql2="DELETE FROM `operaciones` WHERE `operaciones`.`codigo` = '$code' ";
-
+   $sql2="DELETE FROM `operaciones` WHERE `operaciones`.`lote` = '$lote' ";
     $obj->query($sql1);
     $obj->query($sql2);
-
-    
   }
   echo json_encode("1");
 ?>

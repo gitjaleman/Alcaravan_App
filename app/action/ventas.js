@@ -14,8 +14,6 @@ function filtro() {
       url: http + "/rest/api/lotes_filter",
       data: frm,
     }).done(function (i) {
-
-     console.log(i)
       var result =i.data;
     $("#box_body").html('');
     for (let  item of  result) {
@@ -38,10 +36,7 @@ function search() {
     }).done(function (i) {
       var r =i.data;
       $("#box_body").html('');
-     
       $("#box_body").append('<button onclick="see('+r.id+')" class="box_lote '+r.estado+'">'+r.detalle+'</button');
-    
-      
     });
   });
 }
